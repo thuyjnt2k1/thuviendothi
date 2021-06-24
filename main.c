@@ -91,9 +91,10 @@ int main()
 	memset(output, 0, MAX_SIZE*sizeof(int));
   	Graph g = createGraph();
   	int size;
-	// makeDirectedGraph("text1.txt", 50);
-	// makeWeightedGraph("text2.txt", 50);
-	readFile(g, "text2.txt", "graph.dot", &size);
+	makeUnDirectedGraph("text3.txt", 50);
+	makeDirectedGraph("text1.txt", 50);
+	makeWeightedGraph("text2.txt", 50);
+	readFile(g, "text3.txt", "graph.dot", &size);
 
 	BFS(g, 1, -1, output, size);
 	int i = 10;
